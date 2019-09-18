@@ -1,9 +1,10 @@
 // A $( document ).ready() block.
 $(document).ready(function () {
-    console.log("ready!");
 
     var dNow = new Date();
     var localdate = (dNow.getMonth() + 1) + '/' + dNow.getDate() + '/' + dNow.getFullYear() + ' ' + dNow.getHours() + ':' + dNow.getMinutes();
+    // To show current date to card
+    $("#upcoming").text("Today");
     $('#currentDate').text(localdate);
 
     $("body").on('click', "#timeList", function (event) {
@@ -30,14 +31,16 @@ function nextDay() {
     var CurrentDate = new Date();
     CurrentDate.setDate(CurrentDate.getDate() + 1)
     var localdate = (CurrentDate.getMonth() + 1) + '/' + CurrentDate.getDate() + '/' + CurrentDate.getFullYear() + ' ' + CurrentDate.getHours() + ':' + CurrentDate.getMinutes();
-    $('#currentDate').text("nextDay:" + localdate);
+    $("#upcoming").text("Next Day");
+    $('#currentDate').text(localdate);
 }
 
 function nextWeek() {
     var CurrentDate = new Date();
     CurrentDate.setDate(CurrentDate.getDate() + 7);
     var localdate = (CurrentDate.getMonth() + 1) + '/' + CurrentDate.getDate() + '/' + CurrentDate.getFullYear() + ' ' + CurrentDate.getHours() + ':' + CurrentDate.getMinutes();
-    $('#currentDate').text("nextWeek:" + localdate);
+    $("#upcoming").text("Next Week");
+    $('#currentDate').text(localdate);
 }
 
 
@@ -47,12 +50,14 @@ function next_month() {
     console.log("Current date:", CurrentDate);
     CurrentDate.setMonth(CurrentDate.getMonth() + 1);
     var localdate = (CurrentDate.getMonth() + 1) + '/' + CurrentDate.getDate() + '/' + CurrentDate.getFullYear() + ' ' + CurrentDate.getHours() + ':' + CurrentDate.getMinutes();
-    $('#currentDate').text("next_month:" + localdate);
+    $("#upcoming").text("Next Month");
+    $('#currentDate').text(localdate);
 }
 
 function next_threeMonth() {
     var CurrentDate = new Date();
     CurrentDate.setMonth(CurrentDate.getMonth() + 3);
     var localdate = (CurrentDate.getMonth() + 1) + '/' + CurrentDate.getDate() + '/' + CurrentDate.getFullYear() + ' ' + CurrentDate.getHours() + ':' + CurrentDate.getMinutes();
-    $('#currentDate').text("next_threeMonth:" + localdate);
+    $("#upcoming").text("Next 3 Months");
+    $('#currentDate').text(localdate);
 }
